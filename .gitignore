@@ -21,3 +21,6 @@ provider/**/schema.go
 **/version.txt
 **/nuget
 **/dist
+/sdk/**
+!/sdk/go.mod
+!/sdk/go.sum

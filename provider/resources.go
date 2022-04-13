@@ -32,7 +32,13 @@ const (
 	// registries for nodejs and python:
 	mainPkg = "megaport"
 	// modules:
-	mainMod = "index" // the megaport module
+	mainMod     = "index" // the megaport module
+	aws         = "aws"
+	gcp         = "gcp"
+	azure       = "azure"
+	cloudRouter = "cloudRouter"
+	port        = "port"
+	vxc         = "vxc"
 )
 
 // preConfigureCallback is called before the providerConfigure function of the underlying provider.
@@ -59,7 +65,7 @@ func Provider() tfbridge.ProviderInfo {
 		// Change this to your personal name (or a company name) that you
 		// would like to be shown in the Pulumi Registry if this package is published
 		// there.
-		Publisher: "Pulumi",
+		Publisher: "Stateless",
 		// LogoURL is optional but useful to help identify your package in the Pulumi Registry
 		// if this package is published there.
 		//
@@ -79,7 +85,7 @@ func Provider() tfbridge.ProviderInfo {
 		Homepage:   "https://www.pulumi.com",
 		Repository: "https://github.com/BeStateless/pulumi-megaport",
 		// The GitHub Org for the provider - defaults to `terraform-providers`
-		GitHubOrg: "",
+		GitHubOrg: "BeStateless",
 		Config:    map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
@@ -91,24 +97,25 @@ func Provider() tfbridge.ProviderInfo {
 			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi type. Two examples
-			// are below - the single line form is the common case. The multi-line form is
-			// needed only if you wish to override types or other default options.
-			//
-			// "aws_iam_role": {Tok: tfbridge.MakeResource(mainMod, "IamRole")}
-			//
-			// "aws_acm_certificate": {
-			// 	Tok: tfbridge.MakeResource(mainMod, "Certificate"),
-			// 	Fields: map[string]*tfbridge.SchemaInfo{
-			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
-			// 	},
-			// },
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"megaport_aws_connection":   {Tok: tfbridge.MakeResource(mainPkg, aws, "AwsConnection")},
+			"megaport_gcp_connection":   {Tok: tfbridge.MakeResource(mainPkg, gcp, "GcpConnection")},
+			"megaport_azure_connection": {Tok: tfbridge.MakeResource(mainPkg, azure, "AzureConnection")},
+			"megaport_mcr":              {Tok: tfbridge.MakeResource(mainPkg, cloudRouter, "CloudRouter")},
+			"megaport_port":             {Tok: tfbridge.MakeResource(mainPkg, port, "Port")},
+			"megaport_vxc":              {Tok: tfbridge.MakeResource(mainPkg, vxc, "VxcConnection")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi function. An example
-			// is below.
-			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainMod, "getAmi")},
+			"megaport_aws_connection":   {Tok: tfbridge.MakeDataSource(mainPkg, aws, "getAwsConnection")},
+			"megaport_azure_connection": {Tok: tfbridge.MakeDataSource(mainPkg, azure, "getAzureConnection")},
+			"megaport_gcp_connection":   {Tok: tfbridge.MakeDataSource(mainPkg, gcp, "getGcpConnection")},
+			"megaport_location":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getLocation")},
+			"megaport_locations":        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getLocations")},
+			"megaport_mcr":              {Tok: tfbridge.MakeDataSource(mainPkg, cloudRouter, "getCloudRouter")},
+			"megaport_partner_port":     {Tok: tfbridge.MakeDataSource(mainPkg, port, "getPartnerPort")},
+			"megaport_port":             {Tok: tfbridge.MakeDataSource(mainPkg, port, "getPort")},
+			"megaport_ports":            {Tok: tfbridge.MakeDataSource(mainPkg, port, "getPorts")},
+			"megaport_vxc":              {Tok: tfbridge.MakeDataSource(mainPkg, vxc, "getVxcConnection")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
@@ -122,7 +129,7 @@ func Provider() tfbridge.ProviderInfo {
 			// See the documentation for tfbridge.OverlayInfo for how to lay out this
 			// section, or refer to the AWS provider. Delete this section if there are
 			// no overlay files.
-			//Overlay: &tfbridge.OverlayInfo{},
+			Overlay: &tfbridge.OverlayInfo{},
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
