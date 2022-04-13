@@ -8,9 +8,9 @@
     ],
     "homepage": "https://www.pulumi.com",
     "license": "Apache-2.0",
-    "attribution": "This Pulumi package is based on the [`megaport` Terraform Provider](https://github.com/terraform-providers/terraform-provider-megaport).",
+    "attribution": "This Pulumi package is based on the [`megaport` Terraform Provider](https://github.com/BeStateless/terraform-provider-megaport).",
     "repository": "https://github.com/BeStateless/pulumi-megaport",
-    "publisher": "Pulumi",
+    "publisher": "Stateless",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
     },
@@ -40,6 +40,2906 @@
             "password",
             "username"
         ]
+    },
+    "types": {
+        "megaport:aws/connectionAEnd:connectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "portId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId"
+                    ]
+                }
+            }
+        },
+        "megaport:aws/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "bfdConfigurations",
+                        "bgpConnections",
+                        "ipAddresses",
+                        "ipRoutes",
+                        "natIpAddresses"
+                    ]
+                }
+            }
+        },
+        "megaport:aws/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ]
+        },
+        "megaport:aws/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "localIpAddress",
+                "peerAsn",
+                "peerIpAddress"
+            ]
+        },
+        "megaport:aws/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "nextHop",
+                "prefix"
+            ]
+        },
+        "megaport:aws/connectionBEnd:connectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId",
+                        "requestedVlan"
+                    ]
+                }
+            }
+        },
+        "megaport:aws/connectionCspSetting:connectionCspSetting": {
+            "properties": {
+                "amazonAccount": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "amazonAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "amazonIp": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "authKey": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "connectionName": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "customerIp": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "hostedConnection": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefixes": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedProductId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "visibility": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "amazonAccount",
+                "requestedProductId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "amazonAccount",
+                        "assignedAsn",
+                        "requestedProductId"
+                    ]
+                }
+            }
+        },
+        "megaport:aws/getConnectionAEnd:getConnectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:aws/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdConfigurations",
+                "bgpConnections",
+                "ipAddresses",
+                "ipRoutes",
+                "natIpAddresses"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:aws/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:aws/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdEnabled",
+                "description",
+                "localIpAddress",
+                "medIn",
+                "medOut",
+                "password",
+                "peerAsn",
+                "peerIpAddress",
+                "shutdown"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:aws/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "decription": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "decription",
+                "nextHop",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:aws/getConnectionBEnd:getConnectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionAEnd:getConnectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:azure/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:azure/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:azure/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdConfigurations",
+                "bgpConnections",
+                "ipAddresses",
+                "ipRoutes",
+                "natIpAddresses"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdEnabled",
+                "description",
+                "localIpAddress",
+                "medIn",
+                "medOut",
+                "password",
+                "peerAsn",
+                "peerIpAddress",
+                "shutdown"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "decription": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "decription",
+                "nextHop",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:azure/getConnectionBEnd:getConnectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:cloudRouter/getCloudRouterRouter:getCloudRouterRouter": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portSpeed": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "portSpeed"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:cloudRouter/routerRouter:routerRouter": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portSpeed": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "portSpeed"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "portSpeed"
+                    ]
+                }
+            }
+        },
+        "megaport:gcp/connectionAEnd:connectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "portId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId"
+                    ]
+                }
+            }
+        },
+        "megaport:gcp/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "bfdConfigurations",
+                        "bgpConnections",
+                        "ipAddresses",
+                        "ipRoutes",
+                        "natIpAddresses"
+                    ]
+                }
+            }
+        },
+        "megaport:gcp/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ]
+        },
+        "megaport:gcp/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "localIpAddress",
+                "peerAsn",
+                "peerIpAddress"
+            ]
+        },
+        "megaport:gcp/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "nextHop",
+                "prefix"
+            ]
+        },
+        "megaport:gcp/connectionBEnd:connectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId",
+                        "requestedVlan"
+                    ]
+                }
+            }
+        },
+        "megaport:gcp/connectionCspSetting:connectionCspSetting": {
+            "properties": {
+                "pairingKey": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedProductId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "pairingKey"
+            ]
+        },
+        "megaport:gcp/getConnectionAEnd:getConnectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:gcp/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdConfigurations",
+                "bgpConnections",
+                "ipAddresses",
+                "ipRoutes",
+                "natIpAddresses"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:gcp/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:gcp/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdEnabled",
+                "description",
+                "localIpAddress",
+                "medIn",
+                "medOut",
+                "password",
+                "peerAsn",
+                "peerIpAddress",
+                "shutdown"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:gcp/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "decription": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "decription",
+                "nextHop",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:gcp/getConnectionBEnd:getConnectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/connectionAEnd:connectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "portId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId"
+                    ]
+                }
+            }
+        },
+        "megaport:vxc/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "bfdConfigurations",
+                        "bgpConnections",
+                        "ipAddresses",
+                        "ipRoutes",
+                        "natIpAddresses"
+                    ]
+                }
+            }
+        },
+        "megaport:vxc/connectionAEndMcrConfigurationBfdConfiguration:connectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ]
+        },
+        "megaport:vxc/connectionAEndMcrConfigurationBgpConnection:connectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "localIpAddress",
+                "peerAsn",
+                "peerIpAddress"
+            ]
+        },
+        "megaport:vxc/connectionAEndMcrConfigurationIpRoute:connectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "nextHop",
+                "prefix"
+            ]
+        },
+        "megaport:vxc/connectionBEnd:connectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "portId"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "assignedAsn",
+                        "assignedVlan",
+                        "location",
+                        "name",
+                        "ownerUid",
+                        "portId"
+                    ]
+                }
+            }
+        },
+        "megaport:vxc/getConnectionAEnd:getConnectionAEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration": {
+            "properties": {
+                "bfdConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "bgpConnections": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ipRoutes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "natIpAddresses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdConfigurations",
+                "bgpConnections",
+                "ipAddresses",
+                "ipRoutes",
+                "natIpAddresses"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/getConnectionAEndMcrConfigurationBfdConfiguration:getConnectionAEndMcrConfigurationBfdConfiguration": {
+            "properties": {
+                "multiplier": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "rxInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "txInterval": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "multiplier",
+                "rxInterval",
+                "txInterval"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/getConnectionAEndMcrConfigurationBgpConnection:getConnectionAEndMcrConfigurationBgpConnection": {
+            "properties": {
+                "bfdEnabled": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "localIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medIn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "medOut": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "peerIpAddress": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "shutdown": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "bfdEnabled",
+                "description",
+                "localIpAddress",
+                "medIn",
+                "medOut",
+                "password",
+                "peerAsn",
+                "peerIpAddress",
+                "shutdown"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/getConnectionAEndMcrConfigurationIpRoute:getConnectionAEndMcrConfigurationIpRoute": {
+            "properties": {
+                "decription": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "nextHop": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "prefix": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "decription",
+                "nextHop",
+                "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "megaport:vxc/getConnectionBEnd:getConnectionBEnd": {
+            "properties": {
+                "assignedAsn": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "assignedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "ownerUid": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "portId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "requestedVlan": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "assignedAsn",
+                "assignedVlan",
+                "location",
+                "name",
+                "ownerUid",
+                "portId",
+                "requestedVlan"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        }
     },
     "provider": {
         "description": "The provider type for the megaport package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
@@ -94,6 +2994,1536 @@
             "username"
         ]
     },
+    "resources": {
+        "megaport:aws/connection:connection": {
+            "properties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "adminLocked": {
+                    "type": "boolean"
+                },
+                "awsId": {
+                    "type": "string"
+                },
+                "bEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionBEnd:connectionBEnd"
+                    }
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "createDate": {
+                    "type": "integer"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "cspSettings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionCspSetting:connectionCspSetting"
+                    }
+                },
+                "liveDate": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "provisioningStatus": {
+                    "type": "string"
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                },
+                "vxcType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "aEnds",
+                "adminLocked",
+                "awsId",
+                "bEnds",
+                "companyName",
+                "createDate",
+                "createdBy",
+                "cspSettings",
+                "liveDate",
+                "locked",
+                "provisioningStatus",
+                "rateLimit",
+                "vxcName",
+                "vxcType"
+            ],
+            "inputProperties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "cspSettings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:aws/connectionCspSetting:connectionCspSetting"
+                    }
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "aEnds",
+                "cspSettings",
+                "rateLimit",
+                "vxcName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering connection resources.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/connectionAEnd:connectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "awsId": {
+                        "type": "string"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/connectionBEnd:connectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "cspSettings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/connectionCspSetting:connectionCspSetting"
+                        }
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcInternalType": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "megaport:cloudRouter/router:router": {
+            "properties": {
+                "adminLocked": {
+                    "type": "boolean"
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "createDate": {
+                    "type": "integer"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "liveDate": {
+                    "type": "integer"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "market": {
+                    "type": "string"
+                },
+                "marketplaceVisibility": {
+                    "type": "boolean"
+                },
+                "mcrName": {
+                    "type": "string"
+                },
+                "provisioningStatus": {
+                    "type": "string"
+                },
+                "routers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:cloudRouter/routerRouter:routerRouter"
+                    }
+                },
+                "terminateDate": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "adminLocked",
+                "companyName",
+                "createDate",
+                "createdBy",
+                "liveDate",
+                "locationId",
+                "locked",
+                "market",
+                "marketplaceVisibility",
+                "mcrName",
+                "provisioningStatus",
+                "routers",
+                "terminateDate",
+                "type"
+            ],
+            "inputProperties": {
+                "locationId": {
+                    "type": "integer"
+                },
+                "mcrName": {
+                    "type": "string"
+                },
+                "routers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:cloudRouter/routerRouter:routerRouter"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "locationId",
+                "mcrName",
+                "routers"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering router resources.\n",
+                "properties": {
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "market": {
+                        "type": "string"
+                    },
+                    "marketplaceVisibility": {
+                        "type": "boolean"
+                    },
+                    "mcrName": {
+                        "type": "string"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "routers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:cloudRouter/routerRouter:routerRouter"
+                        }
+                    },
+                    "terminateDate": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "megaport:gcp/connection:connection": {
+            "properties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "adminLocked": {
+                    "type": "boolean"
+                },
+                "bEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionBEnd:connectionBEnd"
+                    }
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "createDate": {
+                    "type": "integer"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "cspSettings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionCspSetting:connectionCspSetting"
+                    }
+                },
+                "liveDate": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "provisioningStatus": {
+                    "type": "string"
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                },
+                "vxcType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "aEnds",
+                "adminLocked",
+                "bEnds",
+                "companyName",
+                "createDate",
+                "createdBy",
+                "cspSettings",
+                "liveDate",
+                "locked",
+                "provisioningStatus",
+                "rateLimit",
+                "vxcName",
+                "vxcType"
+            ],
+            "inputProperties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "cspSettings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:gcp/connectionCspSetting:connectionCspSetting"
+                    }
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "aEnds",
+                "cspSettings",
+                "rateLimit",
+                "vxcName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering connection resources.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/connectionAEnd:connectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/connectionBEnd:connectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "cspSettings": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/connectionCspSetting:connectionCspSetting"
+                        }
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcInternalType": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "megaport:port/port:port": {
+            "properties": {
+                "adminLocked": {
+                    "type": "boolean"
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "createDate": {
+                    "type": "integer"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "lag": {
+                    "type": "boolean"
+                },
+                "lagId": {
+                    "type": "integer"
+                },
+                "lagPortCount": {
+                    "type": "integer"
+                },
+                "lagPrimary": {
+                    "type": "boolean"
+                },
+                "liveDate": {
+                    "type": "integer"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "marketCode": {
+                    "type": "string"
+                },
+                "marketplaceVisibility": {
+                    "type": "boolean"
+                },
+                "portName": {
+                    "type": "string"
+                },
+                "portSpeed": {
+                    "type": "integer"
+                },
+                "provisioningStatus": {
+                    "type": "string"
+                },
+                "term": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "adminLocked",
+                "companyName",
+                "createDate",
+                "createdBy",
+                "lagId",
+                "lagPrimary",
+                "liveDate",
+                "locationId",
+                "locked",
+                "marketCode",
+                "portName",
+                "portSpeed",
+                "provisioningStatus",
+                "type"
+            ],
+            "inputProperties": {
+                "lag": {
+                    "type": "boolean"
+                },
+                "lagId": {
+                    "type": "integer"
+                },
+                "lagPortCount": {
+                    "type": "integer"
+                },
+                "lagPrimary": {
+                    "type": "boolean"
+                },
+                "locationId": {
+                    "type": "integer"
+                },
+                "marketplaceVisibility": {
+                    "type": "boolean"
+                },
+                "portName": {
+                    "type": "string"
+                },
+                "portSpeed": {
+                    "type": "integer"
+                },
+                "term": {
+                    "type": "integer"
+                }
+            },
+            "requiredInputs": [
+                "locationId",
+                "portName",
+                "portSpeed"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering port resources.\n",
+                "properties": {
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "lag": {
+                        "type": "boolean"
+                    },
+                    "lagId": {
+                        "type": "integer"
+                    },
+                    "lagPortCount": {
+                        "type": "integer"
+                    },
+                    "lagPrimary": {
+                        "type": "boolean"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "marketCode": {
+                        "type": "string"
+                    },
+                    "marketplaceVisibility": {
+                        "type": "boolean"
+                    },
+                    "portName": {
+                        "type": "string"
+                    },
+                    "portSpeed": {
+                        "type": "integer"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "term": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "megaport:vxc/connection:connection": {
+            "properties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "adminLocked": {
+                    "type": "boolean"
+                },
+                "bEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionBEnd:connectionBEnd"
+                    }
+                },
+                "companyName": {
+                    "type": "string"
+                },
+                "createDate": {
+                    "type": "integer"
+                },
+                "createdBy": {
+                    "type": "string"
+                },
+                "liveDate": {
+                    "type": "integer"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "provisioningStatus": {
+                    "type": "string"
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                },
+                "vxcType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "aEnds",
+                "adminLocked",
+                "bEnds",
+                "companyName",
+                "createDate",
+                "createdBy",
+                "liveDate",
+                "locked",
+                "provisioningStatus",
+                "rateLimit",
+                "vxcName",
+                "vxcType"
+            ],
+            "inputProperties": {
+                "aEndMcrConfigurations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                    }
+                },
+                "aEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionAEnd:connectionAEnd"
+                    }
+                },
+                "bEnds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/megaport:vxc/connectionBEnd:connectionBEnd"
+                    }
+                },
+                "rateLimit": {
+                    "type": "integer"
+                },
+                "vxcInternalType": {
+                    "type": "string"
+                },
+                "vxcName": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "aEnds",
+                "bEnds",
+                "rateLimit",
+                "vxcName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering connection resources.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/connectionAEndMcrConfiguration:connectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/connectionAEnd:connectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/connectionBEnd:connectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcInternalType": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "megaport:aws/getConnection:getConnection": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getConnection.\n",
+                "properties": {
+                    "vxcId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "vxcId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getConnection.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/getConnectionAEnd:getConnectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:aws/getConnectionBEnd:getConnectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcId": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "aEnds",
+                    "aEndMcrConfigurations",
+                    "adminLocked",
+                    "bEnds",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "liveDate",
+                    "locked",
+                    "provisioningStatus",
+                    "rateLimit",
+                    "vxcId",
+                    "vxcName",
+                    "vxcType",
+                    "id"
+                ]
+            }
+        },
+        "megaport:azure/getConnection:getConnection": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getConnection.\n",
+                "properties": {
+                    "vxcId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "vxcId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getConnection.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:azure/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:azure/getConnectionAEnd:getConnectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:azure/getConnectionBEnd:getConnectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcId": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "aEnds",
+                    "aEndMcrConfigurations",
+                    "adminLocked",
+                    "bEnds",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "liveDate",
+                    "locked",
+                    "provisioningStatus",
+                    "rateLimit",
+                    "vxcId",
+                    "vxcName",
+                    "vxcType",
+                    "id"
+                ]
+            }
+        },
+        "megaport:cloudRouter/getCloudRouter:getCloudRouter": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getCloudRouter.\n",
+                "properties": {
+                    "mcrId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "mcrId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCloudRouter.\n",
+                "properties": {
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "market": {
+                        "type": "string"
+                    },
+                    "marketplaceVisibility": {
+                        "type": "boolean"
+                    },
+                    "mcrId": {
+                        "type": "string"
+                    },
+                    "mcrName": {
+                        "type": "string"
+                    },
+                    "portSpeed": {
+                        "type": "integer"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "routers": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:cloudRouter/getCloudRouterRouter:getCloudRouterRouter"
+                        }
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "adminLocked",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "liveDate",
+                    "locationId",
+                    "locked",
+                    "market",
+                    "marketplaceVisibility",
+                    "mcrId",
+                    "mcrName",
+                    "portSpeed",
+                    "provisioningStatus",
+                    "routers",
+                    "type",
+                    "id"
+                ]
+            }
+        },
+        "megaport:gcp/getConnection:getConnection": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getConnection.\n",
+                "properties": {
+                    "vxcId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "vxcId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getConnection.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/getConnectionAEnd:getConnectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:gcp/getConnectionBEnd:getConnectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcId": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "aEnds",
+                    "aEndMcrConfigurations",
+                    "adminLocked",
+                    "bEnds",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "liveDate",
+                    "locked",
+                    "provisioningStatus",
+                    "rateLimit",
+                    "vxcId",
+                    "vxcName",
+                    "vxcType",
+                    "id"
+                ]
+            }
+        },
+        "megaport:index/getLocation:getLocation": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getLocation.\n",
+                "properties": {
+                    "hasMcr": {
+                        "type": "boolean"
+                    },
+                    "marketCode": {
+                        "type": "string"
+                    },
+                    "matchExact": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getLocation.\n",
+                "properties": {
+                    "address": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "hasMcr": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "latitude": {
+                        "type": "number"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "longitude": {
+                        "type": "number"
+                    },
+                    "market": {
+                        "type": "string"
+                    },
+                    "marketCode": {
+                        "type": "string"
+                    },
+                    "matchExact": {
+                        "type": "boolean"
+                    },
+                    "mcrAvailable": {
+                        "type": "boolean"
+                    },
+                    "metro": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "siteCode": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "address",
+                    "country",
+                    "id",
+                    "latitude",
+                    "liveDate",
+                    "longitude",
+                    "market",
+                    "mcrAvailable",
+                    "metro",
+                    "siteCode",
+                    "status"
+                ]
+            }
+        },
+        "megaport:port/getPartnerPort:getPartnerPort": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPartnerPort.\n",
+                "properties": {
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "connectType": {
+                        "type": "string"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "productName": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPartnerPort.\n",
+                "properties": {
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "companyUid": {
+                        "type": "string"
+                    },
+                    "connectType": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "productName": {
+                        "type": "string"
+                    },
+                    "speed": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "companyUid",
+                    "speed",
+                    "id"
+                ]
+            }
+        },
+        "megaport:port/getPort:getPort": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getPort.\n",
+                "properties": {
+                    "lag": {
+                        "type": "boolean"
+                    },
+                    "lagId": {
+                        "type": "integer"
+                    },
+                    "lagPortCount": {
+                        "type": "integer"
+                    },
+                    "lagPrimary": {
+                        "type": "boolean"
+                    },
+                    "portId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by getPort.\n",
+                "properties": {
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "lag": {
+                        "type": "boolean"
+                    },
+                    "lagId": {
+                        "type": "integer"
+                    },
+                    "lagPortCount": {
+                        "type": "integer"
+                    },
+                    "lagPrimary": {
+                        "type": "boolean"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locationId": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "marketCode": {
+                        "type": "string"
+                    },
+                    "marketplaceVisibility": {
+                        "type": "boolean"
+                    },
+                    "portId": {
+                        "type": "string"
+                    },
+                    "portName": {
+                        "type": "string"
+                    },
+                    "portSpeed": {
+                        "type": "integer"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "term": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "adminLocked",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "lagId",
+                    "lagPrimary",
+                    "liveDate",
+                    "locationId",
+                    "locked",
+                    "marketCode",
+                    "marketplaceVisibility",
+                    "portName",
+                    "portSpeed",
+                    "provisioningStatus",
+                    "term",
+                    "type",
+                    "id"
+                ]
+            }
+        },
+        "megaport:vxc/getConnection:getConnection": {
+            "inputs": {
+                "description": "A collection of arguments for invoking getConnection.\n",
+                "properties": {
+                    "vxcId": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "vxcId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getConnection.\n",
+                "properties": {
+                    "aEndMcrConfigurations": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/getConnectionAEndMcrConfiguration:getConnectionAEndMcrConfiguration"
+                        }
+                    },
+                    "aEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/getConnectionAEnd:getConnectionAEnd"
+                        }
+                    },
+                    "adminLocked": {
+                        "type": "boolean"
+                    },
+                    "bEnds": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/megaport:vxc/getConnectionBEnd:getConnectionBEnd"
+                        }
+                    },
+                    "companyName": {
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "type": "integer"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "liveDate": {
+                        "type": "integer"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "provisioningStatus": {
+                        "type": "string"
+                    },
+                    "rateLimit": {
+                        "type": "integer"
+                    },
+                    "vxcId": {
+                        "type": "string"
+                    },
+                    "vxcName": {
+                        "type": "string"
+                    },
+                    "vxcType": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "aEnds",
+                    "aEndMcrConfigurations",
+                    "adminLocked",
+                    "bEnds",
+                    "companyName",
+                    "createDate",
+                    "createdBy",
+                    "liveDate",
+                    "locked",
+                    "provisioningStatus",
+                    "rateLimit",
+                    "vxcId",
+                    "vxcName",
+                    "vxcType",
+                    "id"
+                ]
+            }
+        }
+    },
     "language": {
         "csharp": {
             "compatibility": "tfbridge20",
@@ -119,12 +4549,12 @@
             "disableUnionOutputTypes": true,
             "packageDescription": "A Pulumi package for creating and managing megaport cloud resources.",
             "packageName": "",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-megaport)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-megaport` repo](https://github.com/pulumi/pulumi-megaport/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-megaport` repo](https://github.com/terraform-providers/terraform-provider-megaport/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/BeStateless/terraform-provider-megaport)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-megaport` repo](https://github.com/pulumi/pulumi-megaport/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`BeStateless/terraform-provider-megaport` repo](https://github.com/BeStateless/terraform-provider-megaport/issues).",
             "typescriptVersion": ""
         },
         "python": {
             "compatibility": "tfbridge20",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-megaport)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-megaport` repo](https://github.com/pulumi/pulumi-megaport/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-megaport` repo](https://github.com/terraform-providers/terraform-provider-megaport/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/BeStateless/terraform-provider-megaport)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-megaport` repo](https://github.com/pulumi/pulumi-megaport/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`BeStateless/terraform-provider-megaport` repo](https://github.com/BeStateless/terraform-provider-megaport/issues).",
             "requires": {
                 "pulumi": "\u003e=3.0.0,\u003c4.0.0"
             }
