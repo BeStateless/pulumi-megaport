@@ -6,7 +6,7 @@ replace (
 	github.com/hashicorp/go-getter => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20211230170131-3a7c83bfab87
 	github.com/megaport/megaportgo => github.com/BeStateless/megaportgo v0.1.10-stateless
-	github.com/megaport/terraform-provider-megaport => ../../terraform-provider-megaport
+	github.com/megaport/terraform-provider-megaport => github.com/BeStateless/terraform-provider-megaport v0.2.5-stateless
 )
 
 require (

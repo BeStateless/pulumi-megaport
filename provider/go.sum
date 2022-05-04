@@ -100,6 +100,8 @@ github.com/Azure/go-autorest/tracing v0.6.0 h1:TYi4+3m5t6K48TGI9AUdb+IzbnSxvnvUM
 github.com/Azure/go-autorest/tracing v0.6.0/go.mod h1:+vhtPC754Xsa23ID7GlGsrdKBpUA79WCAKPPZVC2DeU=
 github.com/BeStateless/megaportgo v0.1.10-stateless h1:4h6Wck91l1TvjojMIW4bmH1/FGLsNZmdg0rV9oCSLHU=
 github.com/BeStateless/megaportgo v0.1.10-stateless/go.mod h1:kEk3BSLw4D3IiTmIHQUlhTwBKbQyLfj01jriSSx1wCA=
+github.com/BeStateless/terraform-provider-megaport v0.2.5-stateless h1:qBD7OH9UCloC/NWweF9/pMzaf8GzT6Cti7soJqUqZ7Q=
+github.com/BeStateless/terraform-provider-megaport v0.2.5-stateless/go.mod h1:O8JpEtUdmUSh7zTMo/v08tcW1WAAzfvSYcLoVKz5g94=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
