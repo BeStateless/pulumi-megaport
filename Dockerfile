@@ -18,6 +18,8 @@ apk add --no-cache \
 ; \
 :;
 
+SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
+
 COPY ./provider/go.* /app/provider/
 
 WORKDIR /app
@@ -54,9 +56,10 @@ terraform init; \
 RUN \
 wget \
   --output-document=- \
-  https://github.com/pulumi/pulumictl/releases/download/v0.0.31/pulumictl-v0.0.31-linux-amd64.tar.gz | \
-    tar --extract --gzip --file - --directory=/usr/local/bin \
-  ; \
+  https://github.com/pulumi/pulumictl/releases/download/v0.0.31/pulumictl-v0.0.31-linux-amd64.tar.gz \
+  | \
+  tar --extract --gzip --file - --directory=/usr/local/bin \
+; \
 :;
 
 RUN \
@@ -64,4 +67,8 @@ cd /app; \
 make build; \
 :;
 
-#make build
+FROM scratch as pulumi-megaport-npm
+
+COPY --from=base_image /root/.terraformrc /pulumi-megaport/terraform/
+COPY --from=base_image /root/terraform-provider-megaport /pulumi-megaport/terraform/
+COPY --from=base_image /app/sdk/nodejs /pulumi-megaport/
