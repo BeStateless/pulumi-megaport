@@ -1,4 +1,3 @@
-#ARG base_image=statelesstestregistry.azurecr.io/stateless/base:24.0
 ARG base_image=golang:1.18.1-alpine3.15
 FROM $base_image as base_image
 
@@ -53,22 +52,34 @@ cd /app/tftest; \
 terraform init; \
 :;
 
+ENV PULUMICTL_VERSION="0.0.31"
 RUN \
 wget \
   --output-document=- \
-  https://github.com/pulumi/pulumictl/releases/download/v0.0.31/pulumictl-v0.0.31-linux-amd64.tar.gz \
+  https://github.com/pulumi/pulumictl/releases/download/v${PULUMICTL_VERSION}/pulumictl-v${PULUMICTL_VERSION}-linux-amd64.tar.gz \
   | \
   tar --extract --gzip --file - --directory=/usr/local/bin \
 ; \
 :;
 
 RUN \
+cd /app/provider; \
+go mod tidy; \
+go build; \
 cd /app; \
 make build; \
 :;
 
-FROM scratch as pulumi-megaport-npm
+COPY ./bundle /root/bundle
+RUN cp /app/bin/pulumi-resource-megaport /root/bundle
 
-COPY --from=base_image /root/.terraformrc /pulumi-megaport/terraform/
-COPY --from=base_image /root/terraform-provider-megaport /pulumi-megaport/terraform/
-COPY --from=base_image /app/sdk/nodejs /pulumi-megaport/
+ARG PACKAGE_VERSION="0.0.2"
+RUN tar czvf "/root/pulumi-resource-megaport-v${PACKAGE_VERSION}-linux-amd64.tar.gz" --directory=/root/bundle .
+RUN cp -a /app/sdk/nodejs/scripts /app/sdk/nodejs/bin/scripts
+
+FROM scratch as pulumi-megaport-npm
+ARG PACKAGE_VERSION="0.0.2"
+
+COPY --from=base_image /root/.terraformrc /pulumi-megaport/.terraformrc
+COPY --from=base_image /root/pulumi-resource-megaport-v${PACKAGE_VERSION}-linux-amd64.tar.gz /pulumi-megaport/
+COPY --from=base_image /app/sdk/nodejs /pulumi-megaport/nodejs

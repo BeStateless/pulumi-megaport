@@ -16,9 +16,9 @@ package megaport
 
 import (
 	"fmt"
+	"github.com/BeStateless/pulumi-megaport/provider/pkg/version"
 	"path/filepath"
 
-	"github.com/BeStateless/pulumi-megaport/provider/pkg/version"
 	megaported "github.com/megaport/terraform-provider-megaport/provider"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
@@ -54,6 +54,9 @@ func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
 	p := shimv2.NewProvider(megaported.Provider())
 
+	const gitHubOrg = "BeStateless"
+	const pulumiVersion = "3.32.1"
+
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
 		P:    p,
@@ -83,9 +86,9 @@ func Provider() tfbridge.ProviderInfo {
 		Keywords:   []string{"pulumi", "megaport", "category/cloud"},
 		License:    "Apache-2.0",
 		Homepage:   "https://www.pulumi.com",
-		Repository: "https://github.com/BeStateless/pulumi-megaport",
+		Repository: fmt.Sprintf("https://github.com/%s/pulumi-megaport", gitHubOrg),
 		// The GitHub Org for the provider - defaults to `terraform-providers`
-		GitHubOrg: "BeStateless",
+		GitHubOrg: gitHubOrg,
 		Config:    map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
@@ -120,7 +123,7 @@ func Provider() tfbridge.ProviderInfo {
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
 			Dependencies: map[string]string{
-				"@pulumi/pulumi": "^3.0.0",
+				"@pulumi/pulumi": pulumiVersion,
 			},
 			DevDependencies: map[string]string{
 				"@types/node": "^10.0.0", // so we can access strongly typed node definitions.
@@ -139,7 +142,7 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
-				fmt.Sprintf("github.com/pulumi/pulumi-%[1]s/sdk/", mainPkg),
+				fmt.Sprintf("github.com/%s/pulumi-%[1]s/sdk/", gitHubOrg, mainPkg),
 				tfbridge.GetModuleMajorVersion(version.Version),
 				"go",
 				mainPkg,
@@ -148,7 +151,7 @@ func Provider() tfbridge.ProviderInfo {
 		},
 		CSharp: &tfbridge.CSharpInfo{
 			PackageReferences: map[string]string{
-				"Pulumi": "3.*",
+				"Pulumi": pulumiVersion,
 			},
 		},
 	}
