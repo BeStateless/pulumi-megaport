@@ -1,4 +1,4 @@
-ARG base_image=golang:1.18.1-alpine3.15
+ARG base_image=golang:1.18.5-alpine3.16
 FROM $base_image as base_image
 
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
@@ -35,13 +35,13 @@ cd /app/provider; \
 
 ENV PATH="/root/.pulumi/bin:${PATH}"
 
-RUN \
-git clone --depth=1 https://github.com/BeStateless/terraform-provider-megaport /root/terraform-provider-megaport; \
-cd /root/terraform-provider-megaport; \
-go mod tidy; \
-make; \
-go build; \
-:;
+#RUN \
+#git clone --depth=1 https://github.com/BeStateless/terraform-provider-megaport /root/terraform-provider-megaport; \
+#cd /root/terraform-provider-megaport; \
+#go mod tidy; \
+#make; \
+#go build; \
+#:;
 
 COPY ./assets/root/.terraformrc /root/.terraformrc
 
@@ -52,14 +52,12 @@ cd /app/tftest; \
 terraform init; \
 :;
 
-ENV PULUMICTL_VERSION="0.0.31"
+ENV PULUMICTL_VERSION="0.0.36"
 RUN \
-wget \
-  --output-document=- \
-  https://github.com/pulumi/pulumictl/releases/download/v${PULUMICTL_VERSION}/pulumictl-v${PULUMICTL_VERSION}-linux-amd64.tar.gz \
-  | \
-  tar --extract --gzip --file - --directory=/usr/local/bin \
-; \
+git clone --depth=1 --branch="v${PULUMICTL_VERSION}" https://github.com/pulumi/pulumictl/ /pulumictl; \
+cd /pulumictl; \
+make; \
+make install; \
 :;
 
 RUN \
@@ -67,11 +65,18 @@ cd /app/provider; \
 go mod tidy; \
 go build; \
 cd /app; \
-make build; \
+#Disable CGO to get a static exe.  We end up with trouble on other platforms that don't use musl otherwise.
+CGO_ENABLED=0 make build; \
 :;
 
 COPY ./bundle /root/bundle
-RUN cp /app/bin/pulumi-resource-megaport /root/bundle
+RUN \
+cp /app/bin/pulumi-resource-megaport /root/bundle; \
+:;
+
+RUN \
+if ldd /root/bundle/pulumi-resource-megaport; then false; fi; \
+:;
 
 ARG PACKAGE_VERSION="0.0.2"
 RUN tar czvf "/root/pulumi-resource-megaport-v${PACKAGE_VERSION}-linux-amd64.tar.gz" --directory=/root/bundle .
