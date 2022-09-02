@@ -70,12 +70,12 @@ RUN \
 if ldd /root/bundle/pulumi-resource-megaport; then false; fi; \
 :;
 
-ARG PACKAGE_VERSION="0.0.6"
+ARG PACKAGE_VERSION="0.0.9"
 RUN tar czvf "/root/pulumi-resource-megaport-v${PACKAGE_VERSION}-linux-amd64.tar.gz" --directory=/root/bundle .
 RUN cp -a /app/sdk/nodejs/scripts /app/sdk/nodejs/bin/scripts
 
 FROM scratch as pulumi-megaport-npm
-ARG PACKAGE_VERSION="0.0.6"
+ARG PACKAGE_VERSION="0.0.9"
 
 COPY --from=base_image /root/.terraformrc /pulumi-megaport/.terraformrc
 COPY --from=base_image /root/pulumi-resource-megaport-v${PACKAGE_VERSION}-linux-amd64.tar.gz /pulumi-megaport/
