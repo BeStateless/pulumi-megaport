@@ -104,7 +104,8 @@ install_python_sdk::
 install_go_sdk::
 
 install_nodejs_sdk::
-	yarn link $(WORKING_DIR)/sdk/nodejs/bin
+	true
+	#yarn link $(WORKING_DIR)/sdk/nodejs/bin
 
 install_sdks:: install_nodejs_sdk
 

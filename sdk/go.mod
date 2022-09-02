@@ -4,7 +4,7 @@ go 1.18
 
 //replace github.com/megaport/megaportgo => github.com/BeStateless/megaportgo v0.1.11-stateless
 
-replace github.com/pulumi/pulumi/sdk/v3 => github.com/pulumi/pulumi/sdk/v3 v3.39.0
+replace github.com/pulumi/pulumi/sdk/v3 => github.com/pulumi/pulumi/sdk/v3 v3.39.1
 
 require (
 	github.com/blang/semver v3.5.1+incompatible

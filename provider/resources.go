@@ -55,7 +55,7 @@ func Provider() tfbridge.ProviderInfo {
 	p := shimv2.NewProvider(megaported.Provider())
 
 	const gitHubOrg = "BeStateless"
-	const pulumiVersion = "3.39.0"
+	const pulumiVersion = "3.39.1"
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
