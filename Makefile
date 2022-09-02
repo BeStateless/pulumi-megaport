@@ -104,10 +104,9 @@ install_python_sdk::
 install_go_sdk::
 
 install_nodejs_sdk::
-	yarn link --cwd $(WORKING_DIR)/sdk/nodejs/bin
+	yarn link $(WORKING_DIR)/sdk/nodejs/bin
 
 install_sdks:: install_nodejs_sdk
 
 test::
 	cd examples && go test -v -tags=all -parallel ${TESTPARALLELISM} -timeout 2h
-
