@@ -1,4 +1,4 @@
-ARG base_image=golang:1.18.5-alpine3.16
+ARG base_image=golang:1.19.5-alpine3.17
 FROM $base_image as base_image
 
 SHELL ["/bin/sh", "-euxo", "pipefail", "-c"]
