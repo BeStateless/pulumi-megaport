@@ -5,9 +5,8 @@ go 1.19
 replace (
 	github.com/hashicorp/go-getter => github.com/hashicorp/go-getter v1.4.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20220824175045-450992f2f5b9 // upstream-v2.21.0
-	github.com/megaport/megaportgo => ../../megaportgo
-	//github.com/megaport/terraform-provider-megaport => github.com/BeStateless/terraform-provider-megaport v0.2.5-stateless.0.20220901221934-b6b4d5bfeef6
-	github.com/megaport/terraform-provider-megaport => ../../terraform-provider-megaport
+	//github.com/megaport/megaportgo => ../../megaportgo
+	github.com/megaport/terraform-provider-megaport => github.com/BeStateless/terraform-provider-megaport v0.2.5-stateless.0.20220901221934-b6b4d5bfeef6
 )
 
 require (
